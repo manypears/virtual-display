@@ -1,0 +1,63 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+            body {
+                margin: 0; /* Remove default margin */
+            }
+            main {
+                width: 90%;
+                max-width: calc(100% - 2em);
+                margin: auto;
+                padding: 3em 1em;
+            }
+            /* Global reset for all iframes */
+            iframe {
+                width: 100%; /* Set all iframes to full width */
+                border: none; /* Remove borders for all iframes */
+                display: block; /* Ensure iframes behave like block elements */
+            }
+            /* Styles specific to the panorama */
+            .pano-container {
+                position: relative; /* Create a relative container for positioning */
+                height: 800px; /* Fixed height for the panorama */
+                overflow: hidden; /* Hide any overflow */
+                margin: 0; /* Reset margin */
+            }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+		<Header />
+		<main>
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/alma.jpg&autoLoad=true">
+                </iframe>
+            </div>
+            <section>
+                <h1>Example Page One</h1>
+                <p>Student essay here.</p>
+            </section>
+		</main>
+		<Footer />
+	</body>
+</html>
