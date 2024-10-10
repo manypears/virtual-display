@@ -24,7 +24,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             /* Style for each clickable block */
             .grid-item {
                 background-color: #f9f9f9;
-                border: 1px solid #ffffff;
+                border: 0.8px solid #ffffff;
                 overflow: hidden;
                 text-align: center;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,8 +33,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             }
 
             .grid-item:hover {
-                transform: scale(1.05);
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                transform: scale(0.98);
             }
 
             /* Image inside the box */
@@ -43,7 +42,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 width: 100%;
                 height: 180px;
                 object-fit: cover;
+				border: 8px solid black;
 				border-radius: 0%;
+				box-sizing: border-box;
             }
 
             /* Banner below the image */
@@ -65,43 +66,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Virtual Display</h1>
+			<div style="height: 20px;"></div>
+			<h1>Virtual Display 2024</h1>
 			<div style="height: 10px;"></div>
 			<p>
 				In this course, students were required to think critically about the act of curating in the virtual domain. They were expected to take into account not only the context of this space, but also the objects/artworks discussed or exhibited as part of their research, investigating different taxonomies and displays, as well as various possible approaches to interpretation. A historical overview of the virtual (from the panorama and diorama to current artistic and curatorial practices in the virtual realm) were paired with Practical: and successful strategies of artists, curators and gallerists using social networking as a tool for increasing global visibility and community outreach. The elective resulted in the translation of the student’s research project into an online curatorial platform. 
 			</p>
 
-			<div style="height: 40px;"></div>
+			<div style="height: 45px;"></div>
 	
 			<!-- Grid of clickable blocks -->
 			<div class="grid-container">
 				<a href="/Pano" class="grid-item">
-					<img src="public/Pano1_thumb.png" alt="Page 1 Image">
-					<div class="banner">Example Page 1</div>
+					<img src="/Pano1_thumb.png" alt="Page 1 Image">
+					<div class="banner">Example Page</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image2.jpg" alt="Page 2 Image">
-					<div class="banner">Page 2</div>
+					<div class="banner">Student Name</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image3.jpg" alt="Page 3 Image">
-					<div class="banner">Page 3</div>
+					<div class="banner">Student Name</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image4.jpg" alt="Page 4 Image">
-					<div class="banner">Page 4</div>
+					<div class="banner">Student Name</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image5.jpg" alt="Page 5 Image">
-					<div class="banner">Page 5</div>
+					<div class="banner">Student Name</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image6.jpg" alt="Page 6 Image">
-					<div class="banner">Page 6</div>
+					<div class="banner">Student Name</div>
 				</a>
 				<a href="/Pano" class="grid-item">
 					<img src="/path-to-image7.jpg" alt="Page 7 Image">
-					<div class="banner">Page 7</div>
+					<div class="banner">Student Name</div>
 				</a>
 			</div>
 			
