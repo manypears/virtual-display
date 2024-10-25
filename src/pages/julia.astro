@@ -1,0 +1,148 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- BaseHead component with title and description -->
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+        }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            height: 800px; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header component -->
+    <Header />
+
+    <main>
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "overView",
+                "sceneFadeDuration": 500,
+                "showFullscreenCtrl": false  // Disable fullscreen option
+            },
+            "scenes": {
+                "overView": {
+                    "type": "equirectangular",
+                    "panorama": "https://i.imgur.com/J1Z7ur0.jpeg",  // Full panorama image
+                    "autoLoad": true,
+                    "hfov": 100,  // Adjust field of view if needed for zoom
+                    "autoRotate": -1.5,
+                    "hotSpotDebug": false,
+
+                    "hotSpots": [
+        {
+            "pitch": -1,
+            "yaw": 14.5,
+            "type": "info",
+            "text": "One Meter of Democracy<br>2010",
+            
+        },
+        {
+            "pitch": -1,
+            "yaw": -5.9,
+            "type": "info",
+            "text": "One Rib<br>2008"
+        },
+        {
+            "pitch": 3.4,
+            "yaw": 175.3,
+            "type": "info",
+            "text": "' 2000 '"
+        },
+        {
+            "pitch": 3.5,
+            "yaw": -155.9,
+            "type": "info",
+            "text": "' 1998 '"
+        },
+        {
+            "pitch": 9,
+            "yaw": -50,
+            "type": "info",
+            "text": "He Yunchang"
+        },
+        {
+            "pitch": 0,
+            "yaw": -50,
+            "type": "info",
+            "text": "Dialogue with Water<br>1999"
+        },
+        {
+            "pitch": 0,
+            "yaw": -42.5,
+            "type": "info",
+            "text": "Casting<br>2004"
+        },
+        {
+            "pitch": 17,
+            "yaw": -169.5,
+            "type": "info",
+            "text": "Gu Dexin<br>00 10 29 & 98 1 2<br>Consumable Works"
+        },
+        {
+            "pitch": -0.1,
+            "yaw": -34,
+            "type": "info",
+            "text": "General's Command<br>2005"
+        },
+    ]
+                    
+                }
+            }
+        });
+        </script>
+    
+        <!-- Section with student name and essay -->
+        <section>
+            <h1><br>Julia Snowball</h1>
+            <p><br>My virtual curation explores the work of two xingwei artists, He Yunchang and Gu Dexin... [Continue with content]</p>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <Footer />
+</body>
+</html>
