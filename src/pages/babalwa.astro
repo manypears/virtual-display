@@ -7,60 +7,183 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-            body {
-                margin: 0; /* Remove default margin */
-            }
-            main {
-                width: 90%;
-                max-width: calc(100% - 2em);
-                margin: auto;
-                padding: 3em 1em;
-            }
-            /* Global reset for all iframes */
-            iframe {
-                width: 100%; /* Set all iframes to full width */
-                border: none; /* Remove borders for all iframes */
-                display: block; /* Ensure iframes behave like block elements */
-            }
-            /* Styles specific to the panorama */
-            .pano-container {
-                position: relative; /* Create a relative container for positioning */
-                height: 800px; /* Fixed height for the panorama */
-                overflow: hidden; /* Hide any overflow */
-                margin: 0; /* Reset margin */
-                border: 4px solid rgb(0, 0, 0);
-                box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
-            }
-            .pano-container iframe {
-                position: absolute; /* Absolutely position the iframe */
-                top: 0; /* Align to the top */
-                left: 0; /* Align to the left */
-                height: 100%; /* Full height of the container */
-            }
-            section {
-                padding: 1em; /* Padding for the text below */
-            }
-        </style>
-	</head>
-	<body>
-		<Header />
-		<main>
-            <!-- Embed Pannellum Panorama -->
-            <div class="pano-container">
-                <iframe
-                    allowfullscreen 
-                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/alma.jpg&autoLoad=true&amp;autoRotate=-2">
-                </iframe>
-            </div>
-            <section>
-                <h1>Student Name Here</h1>
-                <p>Student essay here.</p>
-            </section>
-    
-		</main>
-		<Footer />
-	</body>
+<head>
+    <!-- BaseHead component with title and description -->
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+        }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            height: 800px; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header component -->
+    <Header />
+
+    <main>
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overview",
+        "sceneFadeDuration": 700,
+        "showFullscreenCtrl": false
+    },
+           
+    "scenes": {
+        "overview": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/yaTuL3t.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":100,
+           
+            
+           
+            "hotSpots": [
+                {
+                    "pitch": -5.5,
+                    "yaw": -112,
+                    "type": "scene",
+                    "sceneId": "water"
+                },
+                {
+                    "pitch": -4.8,
+                    "yaw": -175.5,
+                    "type": "scene",
+                    "sceneId": "staff"
+                }, 
+                {
+                    "pitch": -6.5,
+                    "yaw": 89,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                }
+            ]
+        }, 
+
+        "water": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/5IEXvIF.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":100,
+            
+            "hotSpots": [
+                {
+                    "pitch": -1.5,
+                    "yaw": 5,
+                    "type": "scene",
+                    "sceneId": "overview"
+                },
+                {
+                    "pitch": -1,
+                    "yaw": 25.5,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                }
+            ]
+        },
+
+        "staff": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/kfT8dyC.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":100,
+            
+            "hotSpots": [
+                {
+                    "pitch": -4,
+                    "yaw": 100,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                },
+                {
+                    "pitch": -1.3,
+                    "yaw": 54,
+                    "type": "scene",
+                    "sceneId": "overview"
+                }
+            
+            ]
+        },
+
+        "drawing": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/fgrm8rN.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":100,
+            "hotSpots": [
+                {
+                    "pitch": -8,
+                    "yaw": -63,
+                    "type": "scene",
+                    "sceneId": "staff"
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 60,
+                    "type": "scene",
+                    "sceneId": "overview"
+                }
+            ]
+        },
+        
+       
+
+    }
+
+    }
+
+            
+        );
+        </script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <h1><br>Babalwa Manyungwana</h1>
+            <p></p>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <Footer />
+</body>
 </html>
