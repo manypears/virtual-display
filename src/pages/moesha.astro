@@ -27,12 +27,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         }
         iframe {
             width: 100%; /* Set all iframes to full width */
+            height:100%;
             border: none; /* Remove borders for all iframes */
             display: block; /* Ensure iframes behave like block elements */
         }
         .pano-container {
             position: relative; /* Create a relative container for positioning */
-            height: 800px; /* Fixed height for the panorama */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
             overflow: hidden; /* Hide any overflow */
             margin: 0; /* Reset margin */
             border: 4px solid rgb(0, 0, 0);
@@ -113,7 +115,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/cbXnJX3.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             "hotSpots": [
                 {
                     "pitch": -7,
@@ -141,7 +143,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/LgpnN7G.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":150,
+            "hfov":80,
             "hotSpots": [
                 {
                     "pitch": -7,
@@ -169,7 +171,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/CrriTVZ.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             "hotSpots": [
                 {
                     "pitch": -8,
@@ -197,7 +199,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/KbVWCqY.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             "hotSpots": [
                 {
                     "pitch": -1,

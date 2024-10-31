@@ -27,12 +27,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         }
         iframe {
             width: 100%; /* Set all iframes to full width */
+            height:100%;
             border: none; /* Remove borders for all iframes */
             display: block; /* Ensure iframes behave like block elements */
         }
         .pano-container {
             position: relative; /* Create a relative container for positioning */
-            height: 800px; /* Fixed height for the panorama */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
             overflow: hidden; /* Hide any overflow */
             margin: 0; /* Reset margin */
             border: 4px solid rgb(0, 0, 0);
@@ -68,18 +70,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     "scenes": {
         "overView": {
             "type": "equirectangular",
-            "panorama": "https://i.imgur.com/grkhT6y.jpeg",
+            "panorama": "https://i.imgur.com/OTQ78ei.jpeg",
             "haov": 130,
             "vaov": 70,
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":50,
+            "hfov":90,
             "minHfov":30,
             "maxHfov":80,
             "minPitch": -33, 
-            "maxPitch": 22, 
-            "minYaw": -60, 
-            "maxYaw": 60,
+            "maxPitch": 17, 
+            "minYaw": -58, 
+            "maxYaw": 58,
         }
     }
 

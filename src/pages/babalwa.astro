@@ -27,12 +27,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         }
         iframe {
             width: 100%; /* Set all iframes to full width */
+            height:100%;
             border: none; /* Remove borders for all iframes */
             display: block; /* Ensure iframes behave like block elements */
         }
         .pano-container {
             position: relative; /* Create a relative container for positioning */
-            height: 800px; /* Fixed height for the panorama */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
             overflow: hidden; /* Hide any overflow */
             margin: 0; /* Reset margin */
             border: 4px solid rgb(0, 0, 0);
@@ -71,7 +73,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/ldNtSYF.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
            
             
            
@@ -102,7 +104,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/5IEXvIF.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             
             "hotSpots": [
                 {
@@ -125,7 +127,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/S0EX9LC.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             
             "hotSpots": [
                 {
@@ -149,7 +151,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             "panorama": "https://i.imgur.com/fgrm8rN.jpeg",
             "vOffset": 1.17,
             "autoLoad": true,
-            "hfov":100,
+            "hfov":80,
             "hotSpots": [
                 {
                     "pitch": -8,
