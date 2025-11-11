@@ -22,7 +22,7 @@
 
             /* Style for each clickable block */
             .grid-item {
-                background-color: #f9f9f9;
+                background-color: #3700ff;
                 border: 0.8px solid #ffffff;
                 overflow: hidden;
                 text-align: center;
@@ -183,6 +183,11 @@ window.addEventListener('scroll', () => {
     
     // Update all banners
     document.querySelectorAll('.grid-item .banner').forEach(banner => {
+        banner.style.backgroundColor = color;
+    });
+
+	    // Update all banners
+    document.querySelectorAll('.grid-item').forEach(banner => {
         banner.style.backgroundColor = color;
     });
 });
