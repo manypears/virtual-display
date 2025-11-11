@@ -89,6 +89,7 @@ div.pnlm-tooltip span {
 <audio id="audio-2" src="assets/audio/Lace_for_all_Occasions_love_dress.mp3" preload="auto"></audio>
 <audio id="audio-3" src="assets/audio/Signys_Kitchen_Doily_please_sit.mp3" preload="auto"></audio>
 <audio id="audio-4" src="assets/audio/Tea-time_Doily_any_tea.mp3" preload="auto"></audio>
+<audio id="audio-5" src="assets/audio/tea_sipping.mp3" preload="auto"></audio>
 
 
 
@@ -204,7 +205,8 @@ const audios = [
     document.getElementById('audio-1'),
     document.getElementById('audio-2'),
     document.getElementById('audio-3'),
-    document.getElementById('audio-4')
+    document.getElementById('audio-4'),
+    document.getElementById('audio-5') 
 ];
 
 function stopAllAudio() {
@@ -221,6 +223,18 @@ function playAudio(id) {
         audio.play();
     }
 }
+
+function enterScene(sceneName) {
+    if (sceneName === 'tea') {
+        stopAllAudio();
+        const teaAudio = document.getElementById('audio-5');
+        if (teaAudio) {
+            teaAudio.play().catch(err => console.log('Autoplay blocked:', err));
+        }
+    }
+}
+
+
 
 </script>
 
