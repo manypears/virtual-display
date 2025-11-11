@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+
+<style>
+            body {
+                margin: 0 !important; 
+                background-color: rgb(24, 24, 24) !important;
+                text-align: left !important;
+            }
+
+            h3 {
+                  color: rgb(255, 255, 255);
+            }
+
+              p {
+                max-width: 1200px;
+                color: rgb(255, 255, 255);
+            
+            }
+
+            main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+		<Header />
+		<main>
+               <a href="/index.html">
+  <img class="fav" src="assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/DLq1ttD.jpeg&autoLoad=true&hfov=60&amp;autoRotate=false">
+                </iframe>
+            </div>
+            <section>
+                <h3>The Dream Studio</h3>
+                <p>Lindelwa Masilela</p>
+                <p>The Dream Studio is a virtual space imagined as a blank canvas, a place where new stories, identities, and representations can unfold daily. Designed as part of my ongoing exploration into curatorial practice and visual anthropology, the studio reimagines what a photographic environment can be: not a site of control or spectacle, but a space of openness, care, and possibility.<br><br>
+Created digitally in Blender, the studio’s minimal architecture and soft lighting evoke neutrality while holding potential; ready to receive whatever narrative or presence enters it. It is both a working studio and a conceptual proposition: a space for collaboration, self-definition, and imaginative authorship.<br><br>
+Through this project, I reflect on the future of decolonial curating; one that transforms the act of representation into an act of relation, where visibility is not imposed but continuously re-authored in the everyday encounters the studio invites.</p>
+<a href="index.html">home</a>
+            </section>
+    
+		</main>
+
+	</body>
+</html>

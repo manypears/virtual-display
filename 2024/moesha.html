@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+                          <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overView",
+        "sceneFadeDuration": 500,
+        "showFullscreenCtrl": false
+    },
+           
+    "scenes": {
+        "overView": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/5dpRKoj.jpeg",
+            "haov": 150,
+            "vaov": 70,
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":50,
+            "minHfov":35,
+            "maxHfov":70,
+            "minPitch": -30, 
+            "maxPitch": 30, 
+            "minYaw": -40, 
+            "maxYaw": 40,
+            "hotSpots": [
+                {
+                    "pitch": 2,
+                    "yaw": -20,
+                    "type": "scene",
+                    "sceneId": "entrance"
+                },
+                {
+                    "pitch": -13,
+                    "yaw": -8,
+                    "type": "scene",
+                    "sceneId": "lounge"
+                }, 
+                {
+                    "pitch": -3,
+                    "yaw": 3,
+                    "type": "scene",
+                    "sceneId": "kitchen"
+                },
+                {
+                    "pitch": -17,
+                    "yaw": 6,
+                    "type": "scene",
+                    "sceneId": "diningRoom"
+                }
+            ]
+        }, 
+
+        "entrance": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/cbXnJX3.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            "hotSpots": [
+                {
+                    "pitch": -7,
+                    "yaw": 37,
+                    "type": "scene",
+                    "sceneId": "kitchen"
+                },
+                {
+                    "pitch": -8,
+                    "yaw": 93,
+                    "type": "scene",
+                    "sceneId": "lounge"
+                },
+                {
+                    "pitch": 71,
+                    "yaw": 62,
+                    "type": "scene",
+                    "sceneId": "overView"
+                }
+            ]
+        },
+
+        "lounge": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/LgpnN7G.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            "hotSpots": [
+                {
+                    "pitch": -7,
+                    "yaw": -17,
+                    "type": "scene",
+                    "sceneId": "diningRoom"
+                },
+                {
+                    "pitch": -2,
+                    "yaw": -165,
+                    "type": "scene",
+                    "sceneId": "entrance"
+                },
+                {
+                    "pitch": 68,
+                    "yaw": 175,
+                    "type": "scene",
+                    "sceneId": "overView"
+                }
+            ]
+        },
+
+        "diningRoom": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/CrriTVZ.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            "hotSpots": [
+                {
+                    "pitch": -8,
+                    "yaw": -69,
+                    "type": "scene",
+                    "sceneId": "kitchen"
+                },
+                {
+                    "pitch": -19,
+                    "yaw": -141,
+                    "type": "scene",
+                    "sceneId": "lounge"
+                },
+                {
+                    "pitch": 68,
+                    "yaw": -13,
+                    "type": "scene",
+                    "sceneId": "overView"
+                }
+            ]
+        },
+        
+        "kitchen": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/KbVWCqY.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            "hotSpots": [
+                {
+                    "pitch": -1,
+                    "yaw": -178,
+                    "type": "scene",
+                    "sceneId": "diningRoom"
+                },
+                {
+                    "pitch": -1,
+                    "yaw": -7,
+                    "type": "scene",
+                    "sceneId": "entrance"
+                },
+                {
+                    "pitch": 82,
+                    "yaw": 110,
+                    "type": "scene",
+                    "sceneId": "overView"
+                }
+            ]
+        },
+
+    }
+
+    }
+
+            
+        );
+        </script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <h3><br>Moesha Mdhluli</h3>
+            <p>The project explores the question: what does it mean to make a house that is quite a home? A building may be considered a house; however, a home is something else within the physical structure of a house. This project specifically examines the performance of home in digital spaces.<br><br>
+                The conceptualization of the project came about as I was searching for visual references of Black domestic architecture. The results were unhelpful, showing instead a plethora of AI-generated “modern” interior spaces or linking to websites and marketplaces for Black-contemporary-cultural interior finishing. This led me to think about how the experience and performance of home manifest in digital spaces, specifically in relation to care, ownership, and aesthetic practices.<br><br>
+                The model of a domestic space is used to foreground communal homemaking practices by drawing attention to the entryway, living, and dining room. There is a specificity in rendering an experiential navigation of the home by using recognizable objects, immaterial objects (through shadows), and emanating color. The focus on communal sites and their practices alludes to the shared relationship that digital space has with the domestic—in terms of social construction and mechanisms.
+                </p>
+        </section>
+    </main>
+
+</body>
+</html>

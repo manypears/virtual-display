@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+
+        main {
+            width: 80%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+
+
+.pnlm-tooltip {
+    background: none !important;
+
+    font-family: 'Nanum Gothic Coding', monospace;
+    padding: .5rem .75rem !important;
+    min-width: 150px; /* wider */
+    min-height: 50px;
+    line-height: 1.3;
+
+}
+div.pnlm-tooltip span {
+max-width: 1000px !important;
+min-width: 600px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <main>
+
+               <a href="/index.html">
+  <img class="fav" src="assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+
+    <div id="panorama" class="pano-container"></div>
+
+    <!-- Audio elements -->
+    <audio id="marine-audio" src="assets/audio/marine.mp3" preload="auto" loop muted></audio>
+    <audio id="karoo-audio" src="assets/audio/karoo.mp3" preload="auto" loop muted></audio>
+    <audio id="overview-audio" src="assets/audio/overview.mp3" preload="auto" loop muted></audio>
+
+    <script>
+      // Unlock audio on first user interaction
+      document.addEventListener('click', function unlock() {
+        document.getElementById('marine-audio').muted = false;
+        document.getElementById('karoo-audio').muted = false;
+        document.getElementById('overview-audio').muted = false;
+        document.removeEventListener('click', unlock);
+      });
+
+      // Initialize Pannellum
+      var viewer = pannellum.viewer('panorama', {
+        "default": {
+          "firstScene": "overView",
+          "sceneFadeDuration": 500,
+          "showFullscreenCtrl": true
+        },
+        "scenes": {
+          "overView": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/xb6iQB0.png",
+            "haov": 150, "vaov": 70, "vOffset": 1.17, "autoLoad": true,
+            "hfov":50, "minHfov":35, "maxHfov":70,
+            "minPitch": -30, "maxPitch": 30,
+            "minYaw": -40, "maxYaw": 40,
+            "hotSpots": [
+              { "pitch": 1, "yaw": -22, "type": "scene", "sceneId": "karoo" },
+              { "pitch": 2, "yaw": 25, "type": "scene", "sceneId": "marine" },
+              { "pitch": 3, "yaw": 0, "type": "info", "text":"Welcome to the Sonic Vault — in an age where anthropogenic activities have severely impacted the world’s ecosystems, the vault serves as a digital repository dedicated to the conservation of the Earth’s vanishing biomes. Within this vault, there are two biomes with reconstructed environments and a soundscape that documents the biome’s reconstructed sonic profile before its disappearance from the world." }
+            ]
+          },
+          "marine": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/BLfW2uy.png",
+            "vOffset": 1.17, "autoLoad": true, "hfov":80,
+            "hotSpots": [
+              { "pitch": -1, "yaw": 178, "type": "scene", "sceneId": "overView" },
+              { "pitch": 6, "yaw": 31, "type": "info", "text":"Here you will find the reconstructed Oceanic Biome which preserves the soundscape of the swish of coral reef, the call of the African penguin, crashing waves and the sonorous songs of whales." }
+            ]
+          },
+          "karoo": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/erpkNJ3.jpeg",
+            "vOffset": 1.17, "autoLoad": true, "hfov":80,
+            "hotSpots": [
+              { "pitch": -17, "yaw": 130, "type": "scene", "sceneId": "overView" },
+              { "pitch": 2, "yaw": 7, "type": "info", "text": "Here you will find a reconstructed Succulent Karoo Biome and a soundscape of the environment, which preserves the chirps of birds such as the Namaqua Dove, Warbler and Sandgrouse, as well as the bark of the Black-backed Jackal." }
+            ]
+          }
+        }
+      });
+
+      // Play scene-specific audio on scene load
+      viewer.on('load', function() {
+        let scene = viewer.getScene();
+
+        const audios = {
+          'marine': document.getElementById('marine-audio'),
+          'karoo': document.getElementById('karoo-audio'),
+          'overView': document.getElementById('overview-audio')
+        };
+
+        // Pause all
+        Object.values(audios).forEach(a => {
+          a.pause();
+          a.currentTime = 0;
+        });
+
+        // Play the one for current scene
+        if(audios[scene]) audios[scene].play();
+      });
+    </script>
+
+        <!-- Section with student name and essay -->
+            <section>
+                <h3>Remnant / Resonant</h3>
+                <h4>Lieza Campbell</h4>
+                <p>My virtual curation project titled Remnant/Resonant imagines a vault that preserves the soundscapes of endangered ecosystems in South Africa, in a dystopian future where these natural sounds are fading or have completely vanished. In this instance, the vault accommodates two biomes: the Succulent Karoo and the Marine biome. Serving as a transitional space between the two biomes is a foyer that can be accessed through an elevator. In each room, there is a holographic display that presents information of the vault and its biomes.</p><p>
+This virtual curation project functions as a speculative memorial and an archive. Furthermore, it explores the fragility of ecological memory and how digital media can both memorialise and mourn the loss of sonic ecologies. The design of the vault is inspired by eco-brutalism architecture, where the confined, concrete structures juxtapose with the organic elements such as the flora, water, sunlight and natural sounds. Each biome consists of reconstructed soundscapes, proposing a speculative archive for fading or already lost sonic ecologies in South Africa. Through fabricating soundscapes instead of recording, the project explores the role of digital media in creating a speculative narrative where these soundscapes are remnants of the sonic ecologies which have vanished in a dystopian future.</p>
+<a href="index.html">home</a>
+            </section>
+            <audio id="marine-audio" src="assets/audio/marine.mp3" preload="auto"></audio>
+            <audio id="karoo-audio" src="assets/audio/karoo.mp3" preload="auto"></audio>
+
+    </main>
+
+    <!-- Footer component -->
+    <Footer />
+</body>
+</html>

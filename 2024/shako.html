@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+
+		<main>
+                              <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/fEaoN0f.jpeg&autoLoad=true&hfov=60&amp;autoRotate=-0.7">
+                </iframe>
+            </div>
+            <section>
+                <h3><br>Shako Gxilishe</h3>
+                <p><br>The Rondebosch fountain is an ornamental drinking trough that stands at the intersection of Belmont and Main Roads in the suburb of Rondebosch. It was created in the late 19th century, destroyed in a motor vehicle accident in 2015, and replaced with a replica in 2020. Since the creation of the original structure, the visual landscape of Rondebosch has changed significantly, making the fountain one of the few examples of the Victorian influence on the suburb. By drawing on the limited archival photographs that exist of the fountain and its immediate surroundings, this virtual curation aims to bridge the gap between the past and present through an exploration of temporality, modernity, and loss.
+                    <br><br>
+                    In historical photography, pictures of the same object or space are often placed side-by-side to emphasize the differences between them, illustrating how much has changed over time. Instead, this curation merges historical and contemporary pictures in order to highlight the similarities that remain. This is accomplished by positioning the historical images in such a way that they blend with the contemporary landscape, recontextualizing these images to transcend time and context.<br><br>
+                    The overall purpose of the curation is to provide a glimpse into what the surroundings of the fountain would have looked like in the 19th century and show the ways fragility, preservation, and loss operate throughout time.
+                    </p>
+            </section>
+    
+		</main>
+
+	</body>
+</html>

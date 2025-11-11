@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header component -->
+    <Header />
+
+    <main>
+                  <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overview",
+        "sceneFadeDuration": 700,
+        "showFullscreenCtrl": false
+    },
+           
+    "scenes": {
+        "overview": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/ldNtSYF.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+           
+            
+           
+            "hotSpots": [
+                {
+                    "pitch": -5.5,
+                    "yaw": -112,
+                    "type": "scene",
+                    "sceneId": "water"
+                },
+                {
+                    "pitch": -4.8,
+                    "yaw": -175.5,
+                    "type": "scene",
+                    "sceneId": "staff"
+                }, 
+                {
+                    "pitch": -6.5,
+                    "yaw": 89,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                }
+            ]
+        }, 
+
+        "water": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/5IEXvIF.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            
+            "hotSpots": [
+                {
+                    "pitch": -1.5,
+                    "yaw": 5,
+                    "type": "scene",
+                    "sceneId": "overview"
+                },
+                {
+                    "pitch": -1,
+                    "yaw": 25.5,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                }
+            ]
+        },
+
+        "staff": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/S0EX9LC.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            
+            "hotSpots": [
+                {
+                    "pitch": -4,
+                    "yaw": 100,
+                    "type": "scene",
+                    "sceneId": "drawing"
+                },
+                {
+                    "pitch": -1.3,
+                    "yaw": 54,
+                    "type": "scene",
+                    "sceneId": "overview"
+                }
+            
+            ]
+        },
+
+        "drawing": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/fgrm8rN.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+            "hotSpots": [
+                {
+                    "pitch": -8,
+                    "yaw": -63,
+                    "type": "scene",
+                    "sceneId": "staff"
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 60,
+                    "type": "scene",
+                    "sceneId": "overview"
+                }
+            ]
+        },
+        
+       
+
+    }
+
+    }
+
+            
+        );
+        </script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <h3><br>Babalwa Manyungwana</h3>
+            <p>The Here, There, Here virtual exhibition intricately explores themes of nature, history, and resilience to highlight AmaHlubi’s relationship with their environment as a living archive. By employing three interconnected rooms, the exhibition aims to amplify and foreground Hlubi cultural narratives and history. This concept is based on the belief that nature, land, water, and vegetation collectively represent a significant repository embodying the core of Hlubi history, cultural heritage, and identity.
+                <br><br>My grandfather’s wooden staff—Igqola, an object symbolizing his Hlubi cultural identity as a man, obtained from initiation school—is one of the main objects in the exhibition. Igqola is made from the Searsia tree, which is native to the rocky landscapes of Southern Africa. Known for stabilizing soil and thriving in tough conditions, this tree symbolizes the resilience and adaptability of the Hlubi community through periods of marginalization and the threat of cultural identity erasure. This artifact mirrors a profound connection with nature, bridging cultural identity with the rugged terrain that sustains it.
+                <br><br>Exhibited in a 3D-rendered format, this artifact encourages viewers to explore its unique craftsmanship surrounded by nature, offering an immersive experience that reveals its symbolic importance and environmental origins.
+                <br><br>Reflecting this interdependence with nature, one room in the exhibition is devoted solely to elements drawn from land, water, and vegetation. This room showcases these elements as integral parts of Hlubi cultural identity, illustrating the land as an archive protected by unique vegetation and water bodies that serve as cultural landmarks.
+                <br><br>The exhibition arrangement reflects this philosophy, positioning a room symbolizing nature opposite a traditional archival room to challenge conventional ideas of what constitutes an archive. These extended forms of “archives” defy the conventional limitations and exclusions imposed by paper-based collections, confronting the inherent biases of archival and museum systems that have historically marginalized groups like AmaHlubi. By questioning established notions of what knowledge is and where it resides, the exhibition invites the public to consider whether knowledge must be confined to books and records, or if it can also exist in natural elements, such as a pond in Mkhunyazo, which holds untold stories of Hlubi culture and history.
+                <br><br>Through this project, I aim to disrupt traditional archival boundaries, inviting a reimagining of heritage preservation through nature as a living record.
+                </p>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <Footer />
+</body>
+</html>

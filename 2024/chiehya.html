@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+
+		<main>
+                              <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/D0hL5qh.jpeg&autoLoad=true&hfov=80&amp;autoRotate=-2">
+                </iframe>
+            </div>
+            <section>
+                <h3><br>Ho Chieh-Ya</h3>
+                <p><br>This virtual  curation  aims  to narrate the  history  of my  research  object,  a  Chinese porcelain bowl. Five bowls, each differ in size and design, are arranged on a round table. These include the model of the original bowl, one featuring a shipwreck image, two showcasing images of the bowl’s Iziko Museum accession cards, and one model of my attempt to replicate the original bowl. The table, accompanied by five chairs, invites viewers to sit and engage more closely with  the  bowls. Moving away  from the  usual  method  of displaying  porcelain on  individual stands or behind glass cases, the round table evokes a dining scene, connecting the bowls to their functional purpose as well as referencing their Asian origins and dining customs.<br><br> Surrounding  the  room  are pictures that  capture moments inthe bowl’s story. Each  bowl is paired with its corresponding images on the opposite wall. When viewers sit in front of one of the  five bowls, they  are  positioned  to see the associated images, establishing a connection between the bowl and its narrative. <br><br>The virtual environment is designed as an immersive space. By distorting and deconstructing the bowl’s design (outer floral patterns and inner circle ring) and projecting it onto the walls, floor, and ceiling ofthe room, the viewer is given the sensation of being inside the bowl itself. </p>
+            </section>
+    
+		</main>
+
+	</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: #fdfdfb !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+                font-weight: lighter;
+                color: grey;
+            
+            }
+            h3, h4 {
+                color: rgba(128, 128, 128, 0.792);
+            }
+
+                    main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+     
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        
+        }
+
+
+div.pnlm-tooltip span {
+  background-color: #fdfdfbe2;
+  color: grey;
+  min-width: 400px;
+  display: block;
+  overflow: visible; /* let the outer tooltip position naturally */
+  transform: translateY(200px);
+}
+
+/* inner scroll container */
+.pnlm-tooltip-content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+
+    </style>
+</head>
+<body>
+              
+    <main>
+<audio id="audio-1" src="assets/audio/The_Penelope_Blanket_hi_sweetie.mp3" preload="auto"></audio>
+<audio id="audio-2" src="assets/audio/Lace_for_all_Occasions_love_dress.mp3" preload="auto"></audio>
+<audio id="audio-3" src="assets/audio/Signys_Kitchen_Doily_please_sit.mp3" preload="auto"></audio>
+<audio id="audio-4" src="assets/audio/Tea-time_Doily_any_tea.mp3" preload="auto"></audio>
+
+
+
+          <a href="/index.html">
+  <img class="fav" src="assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overview",
+        "sceneFadeDuration": 700,
+        "showFullscreenCtrl": true
+    },
+           
+    "scenes": {
+        "overview": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/GjpLmYf.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+          
+            "hfov":80,
+           
+            
+           
+            "hotSpots": [
+                {
+                    "pitch": -28,
+                    "yaw": 27,
+                    "type": "scene",
+                    "sceneId": "tea"
+                }
+            ]
+        }, 
+
+        "tea": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/nKZ7SE7.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+              "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": 6,
+                    "yaw": -151,
+                    "type": "info",
+                   
+                    "text": "  <div class='pnlm-tooltip-content'><button onclick=\"playAudio('audio-1')\" style='margin-bottom:.5rem; border:1px solid black; background:white; padding:.25rem .5rem; cursor:pointer;'>play audio</button><img src='https://i.imgur.com/vGqzvET.png' style='width:100%; margin-bottom:.5rem;'>The Penelope Blanket<br>Hi sweetie, What’s your name? I was made as a christening gift for a lovely little girl called Penelope. Penelope and I were friends for a long time, I think about 65 years. She struggled sleeping a lot as a child until I was made by her mother, so she got quite attached to me. Her bedroom was the sweetest array of pink curtains, teddies, gorgeous floral sheets and a wicker rocking chair. It was very of its time, but she loved it. When she was little, she took an interest in ballet and as she started getting a bit older that took off into a passion for all different styles of dance she experimented in most styles, jazz, tap, contemporary but eventually settled into a devotion to ballroom and latin dancing. I spent a lot of time watching her practice in her room, and she tried to be as discrete as possible because she was shy. Her parents could always tell, and they would peep their heads in to watch, she would pretend she was annoyed with them, but I knew she loved their enthusiasm and interest. I stayed on her bed throughout most of her life: her teen years, when she moved out and started her first job, when she got her first home with her husband, when she had her two daughters, Jane and Lisa, and finally when her granddaughter Frances was born. When Fran had her christening Penelope decided it was time for me to be passed on to a new generation. So, I was, once again, a christening gift, but this time for little Frances. Fran is just like Penelope, kind, creative and loves to dance. She did ballet for most of her life and has now found ballroom and Latin, just like her grandmother. It’s been 20 years since I was passed down and she’s just moved away from home for her studies. I can’t wait to see how her life takes shape.</div>"
+
+
+                 
+                },
+
+                                {
+                    "pitch": 0,
+                    "yaw": -87,
+                    "type": "info",
+         
+                   "text": "<div class='pnlm-tooltip-content'><button onclick=\"playAudio('audio-2')\" style='margin-bottom:.5rem; border:1px solid black; background:white; padding:.25rem .5rem; cursor:pointer;'>play audio</button><img src='https://i.imgur.com/w5baRz3.png' style='width:100%; margin-bottom:.5rem;'>Lace For All Occasions<br>Welcome! I love your dress. it reminds me a bit of a dress that I used to be friends with; we were attached at the hip. I was made by a woman named Diana almost a century ago and stitched onto the hem of that dress, a wedding dress. It was passed on for generations, most wedding dresses I encounter only get to experience the thrill once before they’re stuffed in the closet, but me? That Dress and I were a part of 7 different weddings. We were extremely lucky. Because of how old the dress was it had finally started giving up. Joy, the grandmother of my current owner Robin, had been keeping the dress for her when she got married. Well, she started to get a bit old and stopped caring for the dress so well and moths got to it. Robin doesn’t want to get married, so she decided to take me off that dress and incorporate me into her one of her denim jackets. She wanted me to commemorate her grandmother so chose her favourite jacket from the ‘90s (she thinks that’s vintage). It’s not as extravagant as a wedding dress, but it means I get to see Robin almost every day. I used to see my previous owners a total of 20 times, at maximum, so it’s a really nice change of pace, she’s a great companion to have.</div>"
+
+             
+                },
+
+                                                {
+                    "pitch": -7,
+                    "yaw": -5,
+                    "type": "info",
+              
+                    "text": "<div class='pnlm-tooltip-content'><button onclick=\"playAudio('audio-3')\" style='margin-bottom:.5rem; border:1px solid black; background:white; padding:.25rem .5rem; cursor:pointer;'>play audio</button><p>(scroll down)</p><img src='https://i.imgur.com/7jTjvhc.png' style='width:100%; margin-bottom:.5rem;'>Signy's Kitchen Doiley<br>Please sit, make yourself comfortable. Me? well, I was made by a woman in Norway, Signy, I’ve done almost anything a doily can do. I was used as a bug cover for jugs, a place mat, a couch arm protector, I was even an antimacassar for a while. Signy’s 2nd husband used to put enough oil in his hair to fry a whole chicken. But of all the jobs I’ve had my favourite must be being a bowl cover. I know what you’re thinking, what makes it better to being a jug cover? The food! Signy used to bake and cook all the time and would use me to cover the bowls of cake batter, soaking vegetables, marinating chicken, spice mixes, sliced fruit, anything and everything she used to make. I loved helping her, experiencing the kitchen and watching her show her skill, and the aromas. Wow. That kitchen smelled like heaven, and being the bowl cover got me right up there in the action. I do miss it now, but I’m old and tired, and I don’t think it would be the same without her anyway, so I’m happy to take my rest at this point in my life.</div>"
+
+             
+                },
+
+                                                                {
+                    "pitch": -2.4,
+                    "yaw": 30.7,
+                    "type": "info",
+                   "text": "<div class='pnlm-tooltip-content'><button onclick=\"playAudio('audio-4')\" style='margin-bottom:.5rem; border:1px solid black; background:white; padding:.25rem .5rem; cursor:pointer;'>play audio</button><img src='https://i.imgur.com/iqajS5m.png' style='width:100%; margin-bottom:.5rem;'>Tea Time Doily<br>Could I get you any tea? Well, if you change your mind just say, I make a fantastic cup of tea. I’ve spent most of my life in the kitchen serving tea. I was mostly used to decorate the tea tray and protect the wooden trays from burning, but it was such fun. The best teapot I’ve ever worked with was a beautiful porcelain pot with pink embellishments and gold trim. She was a delight, always making jokes, putting a smile on everyone’s faces, people loved her, she was such a charmer. I don’t think I’ve ever met someone so charismatic, and she really knew how to hold a room, always the life of the tea-party. She had an unfortunate accident one year, someone knocked her off the counter, she was empty at the time so was easily pushed over. Everyone, the owners, the teacups and I were extremely concerned. The owners managed to glue her back together, she had a couple scars, so they gave her some extra gold embellishments. When she came back to the kitchen she wasn’t as strong as she was before, but she still managed to continue with her work. Though, our owners were quite cautious with her after the accident, so they didn’t bring her out as much. We were sad to not have her around as much, but she even so, she kept a brave face and kept her smile.</div>"
+
+             
+                },
+
+
+                
+    
+                {
+                    "pitch": -28,
+                    "yaw": 27,
+                    "type": "scene",
+                    "sceneId": "overview"
+                }
+                
+            ]
+        },
+
+       
+        
+       
+
+    }
+
+    }
+
+            
+        );
+
+const audios = [
+    document.getElementById('audio-1'),
+    document.getElementById('audio-2'),
+    document.getElementById('audio-3'),
+    document.getElementById('audio-4')
+];
+
+function stopAllAudio() {
+    audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+}
+
+function playAudio(id) {
+    stopAllAudio();
+    const audio = document.getElementById(id);
+    if(audio){
+        audio.play();
+    }
+}
+
+</script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <br>
+            <h3>Tell us about yourself</h3>
+            <h4>Julia Leisegang</h4>
+            <p>Crafting is an activity of creation that forms communities, connection and intimacy. It has origins within the domestic space, and although this origin can be considered as one of restriction and confinement, the act of crafting exists beyond this confinement of domesticity. Even if crafts such as crochet and knitting are associated with the domestic space and exist as domestic activities the communities and intimacy that it provides in connection between crafters allows it to transcend the attempt to confine it. The space of the craft circle enables communities and connections to flow and for people to share their stories in a space of crafting. It is not just the act of crafting and the people who craft that hold intimacy, these spaces of care and intimacy produce items that can hold the same intimacy through an understanding of the life it has been given through crafting.  The intimacy it holds becomes a signifier of those who it has gone through life with. In this project I explore how these objects hold life, intimacy and connection through their memories and experiences, much like the intimacy that is provided to people through craft, and through this intimacy it transcends any attempt to confine and restrict its existence. </p>
+        </section>
+    </main>
+
+<a href="/index">home</a>
+</body>
+</html>

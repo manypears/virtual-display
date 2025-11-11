@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+
+		<main>
+                              <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/jNKBrYE.jpeg&autoLoad=true&hfov=70&amp;autoRotate=-1">
+                </iframe>
+            </div>
+            <section>
+                <h3><br>Emily Carver</h3>
+                <p><br>The focus of my research project, and as a consequence of such, this project, is a folio of art prints. Produced in 1939, and given to my Great-grandpa by the Soviet Government during Joseph Stalin’s rule, it has been kept in the family ever since. The artworks all adhere to the mandated style of the communist state at the time—known as Socialist Realism. The intent of my virtual curation is to highlight and explore the multifaceted nature of this Soviet art style—as well as the multiple and contested interpretations the Folio’s artworks may hence generate—in both public and private spheres.<br><br>
+                    In juxtaposing a largely negative perspective of the Soviet Union with its positive presentation in the Folio, and my personal perspective of such with that of my Great-grandfather’s, within a series of interconnected spaces/rooms, this project intends to reflect the contrasting perspectives that inform and shape the reception of Socialist Realism as an art style in the contemporary. Ultimately, I intend to support and highlight my own perspective and the argument of my research task—namely that the reception of these dually troublesome and beautiful artworks should reflect their multifaceted nature—leaving space for interpretation by making the possibility for multiple perspectives explicit.
+                    </p>
+            </section>
+    
+
+	</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: #b8b8bc !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+                font-weight: lighter;
+                color: rgb(255, 255, 255);
+            
+            }
+            h3, h4 {
+                color: rgba(255, 255, 255, 0.792);
+            }
+
+                    main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+     
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+              
+    <main>
+          <a href="/index.html">
+  <img class="fav" src="assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overview",
+        "sceneFadeDuration": 700,
+        "showFullscreenCtrl": false
+    },
+           
+    "scenes": {
+        "overview": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/nW9kzxe.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+          "hotSpotDebug": false,
+            "hfov":110,
+           
+            
+           
+            "hotSpots": [
+                {
+                    "pitch": 19,
+                    "yaw": 125,
+                    "type": "scene",
+                    "sceneId": "high"
+                },
+                                {
+                    "pitch": 4,
+                    "yaw": -145,
+                    "type": "scene",
+                    "sceneId": "low"
+             
+                }
+            ]
+        }, 
+
+        "high": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/niYxhi4.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":100,
+              "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": 13,
+                    "yaw": -52,
+                    "type": "scene",
+                    "sceneId": "low"
+                 
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "sceneId": "overview"
+             
+                }
+                
+            ]
+        },
+
+
+                "low": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/89nd8v1.jpeg",
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":80,
+              "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": 15,
+                    "yaw": 24,
+                    "type": "scene",
+                      "sceneId": "high"
+                 
+                },
+                {
+                    "pitch": 5,
+                    "yaw": 2,
+                    "type": "scene",
+                    "sceneId": "overview"
+             
+                }
+                
+            ]
+        },
+       
+        
+       
+
+    }
+
+    }
+
+            
+        );
+        </script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <br>
+            <h3>Gardening the Digital: Curating Belonging, Metadata, and Fog in a Virtual Landscape</h3>
+            <h4>Selihamashang Kutame</h4>
+            <p>This virtual display project extends my ongoing research on digital belongings, dematerialisation, and the conditions of online circulation. The broader research examines how digital images, files, and memes function as cultural artefacts that appear weightless yet carry intimate social, emotional, and historical meaning. Following Marshall McLuhan’s assertion that “the medium is the message” (McLuhan 1964), I argue that the digital environment conditions how we perceive, store, and share these objects. Their dematerialisation on the internet is not simply a technical property but a cultural transformation: digital objects lose their sense of origin, ownership, and material integrity as they circulate.</p>
+        </section>
+        <a href="/index.html">home</a>
+    </main>
+
+
+</body>
+</html>

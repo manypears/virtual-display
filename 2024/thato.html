@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Pannellum panorama viewer styles and script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+
+<style>
+            body {
+                margin: 0; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+            p {
+                max-width: 1200px;
+            
+            }
+        main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+        .pano-container iframe {
+            position: absolute; /* Absolutely position the iframe */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            height: 100%; /* Full height of the container */
+        }
+        section {
+            padding: 1em; /* Padding for the text below */
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+                          <a href="/index.html">
+  <img class="fav" src="/assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+        <!-- Embed Pannellum Panorama -->
+        <div id="panorama" class="pano-container"></div>
+        <script>
+        pannellum.viewer('panorama', {
+           
+        "default": {
+        "firstScene": "overView",
+        "sceneFadeDuration": 500,
+        "showFullscreenCtrl": false
+    },
+           
+    "scenes": {
+        "overView": {
+            "type": "equirectangular",
+            "panorama": "https://i.imgur.com/OTQ78ei.jpeg",
+            "haov": 130,
+            "vaov": 70,
+            "vOffset": 1.17,
+            "autoLoad": true,
+            "hfov":90,
+            "minHfov":30,
+            "maxHfov":80,
+            "minPitch": -33, 
+            "maxPitch": 17, 
+            "minYaw": -58, 
+            "maxYaw": 58,
+        }
+    }
+
+    }
+
+            
+        );
+        </script>
+
+        <!-- Section with student name and essay -->
+        <section>
+            <h3><br>Thato Makatu</h3>
+            <p>My research project is centered around the object of the burglar bar and is developed to explore curatorial methodologies that center familial networks as a mode of learning. During my fieldwork in QwaQwa, Free State, I encountered ditema and morella, which are traditional Basotho architectural features. These features act similarly to Ndebele mural painting, as a home-making process usually enacted by women—often newlyweds—and taught by grandmothers and mothers.<br><br>
+                My virtual curation incorporates these features on a house in the distance, with the distance serving as a purposeful reference to the initial object of the burglar bar and its function as a security feature that restricts access. While researching, I faced obstacles in accessing information due to my inability to speak Sesotho. However, this became easier to navigate as I increasingly relied on and included my mother and uncles as collaborators in my research methodology. They played a key role in the development of this work.<br><br>
+                This led to my focus on ditema and morella as home-making practices that are part of my heritage. I created a virtual curation that places this still somewhat inaccessible practice in a space familiar to me: the Fika-Patso dam in QwaQwa, Free State.</p>
+        </section>
+    </main>
+
+
+</body>
+</html>

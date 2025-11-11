@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+
+<style>
+            
+
+            /* Grid layout for 3x3 */
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 3 columns */
+                gap: 30px; /* Gap between the blocks */
+                max-width: 100%;
+                margin: 20px auto;
+            }
+
+            /* Style for each clickable block */
+            .grid-item {
+                background-color: #f9f9f9;
+                border: 0.8px solid #ffffff;
+                overflow: hidden;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+
+            .grid-item:hover {
+                transform: scale(0.98);
+            }
+
+            /* Image inside the box */
+            .grid-item img {
+				display: block;
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+				border: 8px solid #3700ff;
+				border-radius: 0%;
+				box-sizing: border-box;
+            }
+
+            /* Banner below the image */
+            .grid-item .banner {
+                background-color: #3700ff;
+                color: #ffffff;
+                padding: 4px;
+                font-size: 1em;
+            }
+
+            /* Media query for responsiveness */
+            @media (max-width: 720px) {
+                .grid-container {
+                    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+                }
+            }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div style="height: 20px;"></div>
+			<h1>Virtual Display</h1>
+			<div style="height: 10px;"></div>
+			<p>
+				In this course, students are guided to curate in the virtual domain, engaging the ways in which curatorial practice can be extended through the utilisation of digital media. This involves an investigation of shifts in how curators may apply conventions of taxonomies, display and access through the utilisation of digital exhibition platforms. Practical training in digital curation and technical support is provided by a developer, in aid of the research component where students will conceive of and produce an online exhibition.
+			</p>
+
+			<div style="height: 45px;"></div>
+	<h2>2025</h2>
+			<!-- Grid of clickable blocks -->
+			<div class="grid-container">
+                
+				<a href="/lieza.html" class="grid-item">
+					<img src="https://i.imgur.com/0RUEPS9.png" alt="Lieza Campbell">
+					<div class="banner">Lieza Campbell</div>
+				</a>
+
+
+				<a href="/seli.html" class="grid-item">
+					<img src="https://i.imgur.com/C06xE8i.png" alt="Selihamashango Kutame">
+					<div class="banner">Selihamashango Kutame</div>
+				</a>
+				<a href="/julia.html" class="grid-item">
+					<img src="https://i.imgur.com/fFtsmO4.png" alt="Julia Leisegang">
+					<div class="banner">Julia Leisegang</div>
+				</a>
+				<a href="/mihlali.html" class="grid-item">
+					<img src="https://i.imgur.com/5lX9JBN.png" alt="Mihlali Mabo">
+					<div class="banner">Mihlali Mabo</div>
+				</a>
+
+				<!--
+				<a href="/lindelwa.html" class="grid-item">
+					<img src="https://i.imgur.com/FAbeYvc.png" alt="Lindelwa Masilela">
+					<div class="banner">Lindelwa Masilela</div>
+				</a>
+			-->
+
+				<a href="/roxy.html" class="grid-item">
+					<img src="https://i.imgur.com/YzehH8u.png" alt="Roxy Modricky">
+					<div class="banner">Roxy Modricky</div>
+				</a>
+
+				<a href="/matthew.html" class="grid-item">
+					<img src="https://i.imgur.com/xzmeO7F.png" alt="Matthew van der Walt">
+					<div class="banner">Matthew van der Walt</div>
+				</a>
+
+				
+
+				
+
+			</div>
+
+			<div style="height: 45px;"></div>
+	<h2>2024</h2>
+			<!-- Grid of clickable blocks -->
+			<div class="grid-container">
+                
+				<a href="2024/babalwa.html" class="grid-item">
+					<img src="https://i.imgur.com/3McjpzB.png" alt="Babalwa Manyungwana">
+					<div class="banner">Babalwa Manyungwana</div>
+				</a>
+				<a href="2024/moesha.html" class="grid-item">
+					<img src="https://i.imgur.com/FAbeYvc.png" alt="Moesha Mdhluli">
+					<div class="banner">Moesha Mdhluli</div>
+				</a>
+				<a href="2024/emily.html" class="grid-item">
+					<img src="https://i.imgur.com/9hjzLrE.png" alt="Emily Carver">
+					<div class="banner">Emily Carver</div>
+				</a>
+				<a href="2024/shako.html" class="grid-item">
+					<img src="https://i.imgur.com/sVGC6IG.png" alt="Shako Gxilishe">
+					<div class="banner">Shako Gxilishe</div>
+				</a>
+				<a href="2024/chiehya.html" class="grid-item">
+					<img src="https://i.imgur.com/i544GBS.png" alt="Ho Chieh-Ya">
+					<div class="banner">Chieh-Ya Ho</div>
+				</a>
+				<a href="2024/julia.html" class="grid-item">
+					<img src="https://i.imgur.com/vtWHCi1.png" alt="Julia Snowball">
+					<div class="banner">Julia Snowball</div>
+				</a>
+				<a href="2024/thato.html" class="grid-item">
+					<img src="https://i.imgur.com/utocWur.png" alt="Thato Makatu">
+					<div class="banner">Thato Makatu</div>
+				</a>
+
+				
+
+				
+
+			</div>
+			
+		</main>
+
+<script>
+window.addEventListener('scroll', () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const scrollPercent = scrolled / scrollHeight;
+    
+    // Interpolate from rgb(43, 0, 255) to rgb(0, 0, 0)
+    const r = Math.round(0 * (1 - scrollPercent));
+    const g = Math.round(0 * (1 - scrollPercent));
+    const b = Math.round(255 * (1 - scrollPercent));
+    
+    const color = `rgb(${r}, ${g}, ${b})`;
+    
+    document.body.style.backgroundColor = color;
+    
+    // Update all image borders
+    document.querySelectorAll('.grid-item img').forEach(img => {
+        img.style.borderColor = color;
+    });
+    
+    // Update all banners
+    document.querySelectorAll('.grid-item .banner').forEach(banner => {
+        banner.style.backgroundColor = color;
+    });
+});
+</script>
+
+	</body>
+</html>

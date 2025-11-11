@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/virtual-display-favicon.svg" />
+  <title>virtual display</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+
+<style>
+            body {
+                margin: 0 !important; 
+                background-color: black !important;
+                text-align: left !important;
+            }
+
+              p {
+                max-width: 1200px;
+            
+            }
+
+
+            main {
+            width: 90%;
+            max-width: calc(100% - 2em);
+            margin: auto;
+            padding: 3em 1em;
+        }
+        iframe {
+            width: 100%; /* Set all iframes to full width */
+            height:100%;
+            border: none; /* Remove borders for all iframes */
+            display: block; /* Ensure iframes behave like block elements */
+        }
+        .pano-container {
+            position: relative; /* Create a relative container for positioning */
+            width: 100%;
+            aspect-ratio: 16 / 8; /* Fixed height for the panorama */
+            overflow: hidden; /* Hide any overflow */
+            margin: 0; /* Reset margin */
+            border: 4px solid rgb(0, 0, 0);
+            box-shadow: 0 0 0 0.7px rgb(255, 255, 255);
+        }
+            .pano-container iframe {
+                position: absolute; /* Absolutely position the iframe */
+                top: 0; /* Align to the top */
+                left: 0; /* Align to the left */
+                height: 100%; /* Full height of the container */
+            }
+            section {
+                padding: 1em; /* Padding for the text below */
+            }
+        </style>
+	</head>
+	<body>
+		<Header />
+		<main>
+         
+            <a href="/index.html">
+  <img class="fav" src="assets/virtual-display-favicon.svg" alt="virtual">
+</a>
+
+   
+            <!-- Embed Pannellum Panorama -->
+            <div class="pano-container">
+                <iframe
+                    allowfullscreen 
+                    src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.imgur.com/CwQuxeI.jpeg&autoLoad=true&hfov=80&amp;autoRotate=false">
+                </iframe>
+            </div>
+            <section>
+                <h3>NA</h3>
+                <h4>Matthew van der Walt</h4>
+                <p>This project aims to authorise the somewhat complicated relationship between the aesthetics of recovery spaces such as Alcoholics Anonymous (AA) and Narcotics Anonymous (NA) in reference to their ritualistic mannerisms, which are often over-dramatised or sensationalised as opposed to their intimate function. The virtual exhibition titled Keep Coming Back presents an exaggerated scene digitally rendered as a means to both express the importance of taking a seat in the circle of recovery and the scale of those suffering from addiction. Through contextualising the writing of Michel Foucault in reference to the ability of self-regeneration, this exhibition and its written counterpart, digitise an experience shared by generations of those who have continued to return to the place they feel comforted. The spiritual nature of these meetings remains as the referential guide, producing an autonomous representation of a sacred virtual space. The presence of those around us can only be felt once we step foot inside the spaces we are afraid to acknowledge. The digital age operates through streams of invisible codes operating at speeds that may de-personalise experiences, but rendering an image to represent moments taken to self-reflect acknowledges the ability of AA and NA.</p>
+<a href="index.html">home</a>
+            </section>
+    
+		</main>
+
+	</body>
+</html>
